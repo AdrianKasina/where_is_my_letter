@@ -1,0 +1,96 @@
+@import "normalize.css";
+body {
+    background: #ffffff;
+}
+
+$width-place: 10em;
+$height-place: 12em;
+
+.start {
+  position: absolute;
+  top:40%;
+  left:50%;
+  transform: rotateX(50%);
+  background-color: green;
+  width: 6em;
+  height: 3em;
+}
+
+.places {
+    background: green;
+    border: 3px solid #ffffff;
+    position: absolute;
+}
+
+.hidding-place1 {
+    top: 5vh;
+    left: 30vw;
+    height: ($height-place)-2em;
+    width: ($width-place)-2em;
+}
+
+.hidding-place2 {
+    top: 5vh;
+    right: 30vw;
+    height: ($height-place)-2em;
+    width: ($width-place)-2em;
+}
+
+.hidding-place3 {
+    top: 20vh;
+    left: 25vw;
+    height: ($height-place)-1em;
+    width: ($width-place)-1em;
+}
+
+.hidding-place4 {
+    top: 20vh;
+    right: 25vw;
+    height: ($height-place)-1em;
+    width: ($width-place)-1em;
+}
+
+.hidding-place5 {
+    top: 35vh;
+    left: 20vw;
+    height: $height-place;
+    width: $width-place;
+}
+
+.hidding-place6 {
+    top: 35vh;
+    right: 20vw;
+    height: $height-place;
+    width: $width-place;
+}
+p {
+  position: absolute;
+  bottom: 25vh;
+  font-size: 3em;
+}
+
+.character1,
+.character2,
+.character3,
+.character4 {
+    position: absolute;
+    bottom: 10vh;
+    width: auto;
+    height: auto;
+}
+
+.character1, .capital-first {
+    left: 25vw;
+}
+
+.character2, .small-first {
+    left: 35vw;
+}
+
+.character3, .small-second {
+    right: 25vw;
+}
+
+.character4, .capital-second  {
+    right: 35vw;
+}
