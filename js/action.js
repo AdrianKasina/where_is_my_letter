@@ -1,12 +1,22 @@
 var view = {
 introductionCreature: function(numbPic){
-  console.log(numbPic);
     var imgs = document.querySelectorAll('.character');
-    for (let i=0; i<numbPic.length; i++){
+    for (var i=0; i<numbPic.length; i++){
     var num=numbPic[i];
-   imgs[i].src='img/postac' + num + '.jpg';
-    console.log(num);
+    imgs[i].src='img/postac' + num + '.jpg';
     }
+  },
+  myLetters: function(showLetter) {
+    var pairLetters =  document.querySelectorAll('.letter');
+    var j =0;
+      for (var i=0; i<pairLetters.length; i++){
+        if (i%2 == 0) {
+          pairLetters[i].innerHTML = showLetter[j];
+        } else {
+          pairLetters[i].innerHTML = showLetter[j];
+          j++;
+        }
+      }
   },
   displayStartButton: function() {
   },
@@ -24,21 +34,28 @@ introductionCreature: function(numbPic){
 var model = {
   numCreatures: 4,
   numPictures: 8,
-  numLetters: 2,
-  alphabet: ["a,b,c,d,e,f,g,h,i,j,k,l,m,n,o,p,q,r,s,t,u,v,w,x,y,z"],
+
+  alphabet: ["a", "b", "c", "d", "e", "f", "g", "h", "i", "j", "k", "l", "m", "n", "o", "p", "q", "r", "s", "t", "u", "v", "w", "x", "y", "z"],
   coordinatePlacesHidden: [{locations: [30,5]}, {locations: [60,5]}, {locations: [25,20]}, {locations: [75,20]}, {locations: [20,25]}, {locations: [80,25]}],
 
   chooseCreatures: function(){
       var arrNumb = []
       while(arrNumb.length < this.numCreatures){
-      var randomnumber = Math.ceil(Math.random()*this.numPictures)
-      if(arrNumb.indexOf(randomnumber) > -1) continue;
-      arrNumb[arrNumb.length] = randomnumber;
+      var randomNumber = Math.ceil(Math.random()*this.numPictures)
+      if(arrNumb.indexOf(randomNumber) > -1) continue;
+      arrNumb[arrNumb.length] = randomNumber;
       }
-      console.log(typeof arrNumb);
       view.introductionCreature(arrNumb);
   },
   chooseLetters: function(){
+    var arrLetters =[]
+    while(arrLetters.length < this.numCreatures/2) {
+      var randomLetter = Math.floor(Math.random()*26)
+      if(arrLetters.indexOf(randomLetter) > -1) continue;
+      var letter = this.alphabet[randomLetter];
+      arrLetters[arrLetters.length] = letter;
+    }
+    view.myLetters(arrLetters);
   },
   choosePlacesHidden: function(){
   },
@@ -51,3 +68,4 @@ var contnroller ={
     }
 }
  model.chooseCreatures();
+ model.chooseLetters();
