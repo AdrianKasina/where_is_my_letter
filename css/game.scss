@@ -28,7 +28,7 @@ $spaceBettwen: 5%;
 $topPosition: 15vh;
 $j: 1;
 @for $i from 1 through $numPleces {
-    .places:nth-of-type(#{$i}) {
+    .places:nth-child(#{$i}) {
         @if $i <= $numPleces/2  {
             left: 50%+($i*$spaceBettwen);
             top: $topPosition*$i;
@@ -52,7 +52,18 @@ p {
   width: auto;
   height: auto;
   margin: auto;
+  cursor: pointer;
 }
+.no-clicked {
+}
+.success, .miss, .win {
+  position: absolute;
+  top: 10%;
+  left: 48%;
+  transform: rotateX(50%);
+  font-size: 2em;
+}
+
 $characters: 4;
 $position: (80vw/$characters);
 @for $i from 1 through $characters {
