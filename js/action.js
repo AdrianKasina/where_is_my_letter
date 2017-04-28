@@ -3,7 +3,7 @@ var view = {
         var imgs = document.querySelectorAll('.character');
         for (let i = 0; i < numbPic.length; i++) {
             var num = numbPic[i];
-            imgs[i].src = 'img/postac' + num + '.jpg';
+            imgs[i].src = 'img/postac' + num + '.svg';
         }
     },
     myLetters: function(showLetter) {

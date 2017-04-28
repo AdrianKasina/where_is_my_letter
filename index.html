@@ -11,6 +11,11 @@
 </head>
 
 <body>
+    <object class="sun" id="sun" type="image/svg+xml" data="img/sun.svg"></object>
+    <object class="cloud1" id="cloud1" type="image/svg+xml" data="img/cloud1.svg"></object>
+    <object class="cloud2" id="cloud2" type="image/svg+xml" data="img/cloud2.svg"></object>
+    <object class="cloud3" id="cloud3" type="image/svg+xml" data="img/cloud3.svg"></object>
+    <object class="mouse" id="mouse" type="image/svg+xml" data="img/mouse.svg"></object>
     <button class="start" id="start">Hide it!</button>
      <!-- Charakters with letters -->
     <div class="monsters">
@@ -22,13 +27,13 @@
             <p class="letter"></p>
             <img class="character" id="character2" alt="second character" src="">
         </div>
-        <div class="picture no-clicked">
+        <div class="picture no-clicked" id="test1">
             <p class="capital letter"></p>
-            <img class="character" id="character3" alt="third character" src="">
+            <object class="character" id="character3" type="image/svg+xml" data="img/postac1.svg"></object>
         </div>
         <div class="picture no-clicked">
             <p class="letter"></p>
-            <img class="character" id="character4" alt="fourth character" src="">
+            <object class="character" id="character4" type="image/svg+xml" data="img/postac1.svg"></object>
         </div>
     </div>
  <!-- places for hides -->
@@ -47,6 +52,17 @@
     <div class="places">
     </div>
 </div>
-    <script src="js/TweenMax.min.js"></script>
-    <script src="js/action.js"></script>
+
+ <script src="js/TweenMax.min.js"></script>
+    <script src="js/kute/kute.min.js"></script>
+    <script src="js/kute/kute-svg.min.js"></script>
+    <script src="js/kute/kute-attr.min.js"></script>
+
+    <script src="js/model/engineModel.js"></script>
+    <script src="js/view/engineView.js"></script>
+    <script src="js/controller/engineController.js"></script>
+
+
+
+    <script src="js/motionView.js"></script>
 </body>
