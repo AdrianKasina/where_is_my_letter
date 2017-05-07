@@ -20,9 +20,9 @@ var view = {
             var heightCharacters = characters[i].clientHeight,
                 widthCharacter = characters[i].clientWidth;
             TweenMax.to(characters[i], 2, {
-                left: (coordinates[i][0] - (widthCharacter / 2)),
-                top: (coordinates[i][1]) - heightCharacters,
-                scale: 0.9,
+                left: (coordinates[i][0] - (widthCharacter / 4)),
+                top: (coordinates[i][1]) - heightCharacters-10,
+                scale: 0.8,
                 opacity: 0.9,
                 ease: Back.easeOut.config(1)
             });
