@@ -3,14 +3,14 @@ var view = {
         var imgs = document.querySelectorAll('.character');
         for (let i = 0; i < numbPic.length; i++) {
             var num = numbPic[i];
-            imgs[i].src = 'img/postac' + num + '.svg';
+            imgs[i].data = 'img/character' + num + '.svg';
         }
     },
     myLetters: function(showLetter) {
         var pairLetters = document.querySelectorAll('.letter');
         var j = 0;
         for (let i = 0; i < pairLetters.length; i++) {
-            i % 2 == 0 ? (pairLetters[i].innerHTML = showLetter[j]) : (pairLetters[i].innerHTML = showLetter[j], j++)
+            i % 2 === 0 ? (pairLetters[i].innerHTML = showLetter[j]) : (pairLetters[i].innerHTML = showLetter[j], j++)
         }
     },
 
@@ -18,13 +18,18 @@ var view = {
         var characters = document.querySelectorAll('.picture');
         for (let i = 0; i < characters.length; i++) {
             var heightCharacters = characters[i].clientHeight,
-                widthCharacter = characters[i].clientWidth;
-            TweenMax.to(characters[i], 2, {
-                left: (coordinates[i][0] - (widthCharacter / 4)),
-                top: (coordinates[i][1]) - heightCharacters-10,
-                scale: 0.8,
-                opacity: 0.9,
-                ease: Back.easeOut.config(1)
+                widthCharacter = characters[i].clientWidth,
+                randomMiddlePosition = getRandomInt(48, 52);
+                var tl = new TimelineMax({
+                    ease: Back.easeOut.config(1)
+                });
+                tl.to(characters[i], 1, {
+                    left: randomMiddlePosition+"vw",
+                    top: (coordinates[i][1]) - heightCharacters-10,
+                    scale: 0.8,
+                    delay: 0.5 });
+                tl.to(characters[i], 1.2, {
+                    left: (coordinates[i][0] - (widthCharacter / 4))
             });
         }
 
@@ -34,6 +39,17 @@ var view = {
             x: -155 + "px",
             ease: Back.easeOut.config(1)
         })
+    },
+    buttonHover: function(shadowButton) {
+      shadowButton.setAttribute("style", "stroke: none; fill: #1c674b;");
+    },
+
+    buttonHoverOff: function(shadowButton) {
+      shadowButton.setAttribute("style", "fill:#008a56;fill-rule:evenodd;stroke-width:2;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:1.41420996;stroke:url(#linearGradient25083)");
+    },
+
+    buttonClick: function() {
+      start.style.display = 'none';
     },
 
     backHide: function(arrcharacter) {
@@ -45,32 +61,20 @@ var view = {
     }
     },
     miss: function() {
-        var missText = document.createElement('div');
-        missText.classList.add('miss');
-        missText.setAttribute("id", "shortTimeText");
-        missText.innerHTML = "Try again";
-        document.body.appendChild(missText);
-        setTimeout(view.shortTimeText, 2000);
+        var missText = document.getElementById('miss');
+        missText.style.display = 'block';
+        setTimeout(function () { missText.style.display = 'none';}, 2000);
     },
     hit: function() {
-        var successText = document.createElement('div');
-        successText.classList.add('success');
-        successText.setAttribute("id", "shortTimeText");
-        successText.innerHTML = "Brawo!";
-        document.body.appendChild(successText);
-        setTimeout(view.shortTimeText, 2000);
+      var successText = document.getElementById('success');
+      successText.style.display = 'block';
+      setTimeout(function () { successText.style.display = 'none';}, 2000);
     },
-    shortTimeText: function() {
-        var communique = document.getElementById("shortTimeText");
-        var removeMe = communique.parentNode.removeChild(communique);
-    },
+
     congratulations: function() {
-        var winText = document.createElement('div');
-        winText.classList.add('win');
-        winText.setAttribute("id", "shortTimeText");
-        winText.innerHTML = "You are the best!";
-        document.body.appendChild(winText);
-        setTimeout(view.shortTimeText, 2000);
-        setTimeout(window.location.reload.bind(window.location), 4000);
+        var winText = document.getElementById('win');
+        winText.style.display = 'block';
+        setTimeout(function () { winText.style.display = 'none';}, 4000);
+        setTimeout(window.location.reload.bind(window.location), 5000);
     }
 }

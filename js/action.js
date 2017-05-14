@@ -10,7 +10,7 @@ var view = {
         var pairLetters = document.querySelectorAll('.letter');
         var j = 0;
         for (let i = 0; i < pairLetters.length; i++) {
-            i % 2 == 0 ? (pairLetters[i].innerHTML = showLetter[j]) : (pairLetters[i].innerHTML = showLetter[j], j++)
+            i % 2 === 0 ? (pairLetters[i].innerHTML = showLetter[j]) : (pairLetters[i].innerHTML = showLetter[j], j++)
         }
     },
 
@@ -37,12 +37,13 @@ var view = {
     },
 
     backHide: function(arrcharacter) {
-      for (let i=0; i<arrcharacter.length; i++) {
-      TweenMax.to(arrcharacter[i], 1, {
-          x: 0 + "px",
-          ease: Back.easeOut.config(1), delay:1
-      })
-    }
+        for (let i = 0; i < arrcharacter.length; i++) {
+            TweenMax.to(arrcharacter[i], 1, {
+                x: 0 + "px",
+                ease: Back.easeOut.config(1),
+                delay: 1
+            })
+        }
     },
     miss: function() {
         var missText = document.createElement('div');
@@ -124,8 +125,8 @@ var model = {
             var arrPlaces = Array.from(mySet);
         }
         view.runHidding(arrPlaces);
-      }
     }
+}
 
 var contnroller = {
     numClick: 0,

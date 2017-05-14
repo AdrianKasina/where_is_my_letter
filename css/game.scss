@@ -47,17 +47,18 @@ body {
     position: absolute;
     top: 40%;
     left: 48%;
-    transform: rotateX(50%);
-    background-color: green;
-    width: 6em;
-    height: 3em;
+    width: 6vw;
+    height: 6vw;
+    z-index: 2;
 }
+
 
 .places {
     position: absolute;
     height: 40vh;
     width: 10em;
     max-height: 15em;
+    pointer-events: none;
 }
 
 $numPleces: 6;
@@ -78,10 +79,43 @@ $j: 1;
 }
 // letters and characters
 p {
-    font-size: 3em;
+    font-size: 2em;
     color: black;
     text-align: center;
     margin: 0;
+    padding: 0.2em .5em;
+}
+.speak-bubbels {
+  display: block;
+  position: sticky;
+  margin-bottom: 1em;
+  border: 2px solid #f3e11c;
+  text-align: center;
+  background: #fff;
+  border-radius: 3em/ 2em;
+  width: 6em;
+  }
+  .speak-bubbels:before {
+    content: "";
+    position: absolute;
+    border: 1px solid  #f3e11c;
+    bottom: -10px;
+    left: 50px;
+    width: 15px;
+    height: 15px;
+    background: #ffffff;
+    border-radius: 50%;
+}
+.speak-bubbels:after {
+  content: "";
+  position: absolute;
+  border: 1px solid  #f3e11c;
+  bottom: -20px;
+  left: 45px;
+  width: 10px;
+  height: 10px;
+  background: #ffffff;
+  border-radius: 50%;
 }
 .picture {
   position: absolute;
@@ -97,8 +131,10 @@ display: block;
 position: absolute;
 background-color: transparent;
 cursor: pointer;
-height: 18vh;
-width: 5vw;
+height: 20vh;
+width: 7vw;
+bottom: 0;
+left: -1vw;
 /* plus width and height of the SVG */
 }
 .no-clicked {
@@ -106,11 +142,10 @@ width: 5vw;
 .success, .miss, .win {
   position: absolute;
   top: 10%;
-  left: 48%;
-  transform: rotateX(50%);
-  font-size: 2em;
+  left: 40%;
+  width: 20%;
+  display: none;
 }
-
 $characters: 4;
 $position: (80vw/$characters);
 @for $i from 1 through $characters {

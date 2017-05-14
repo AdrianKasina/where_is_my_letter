@@ -3,6 +3,18 @@ var model = {
     numPictures: 8,
     locations: 6,
     alphabet: ["a", "b", "c", "d", "e", "f", "g", "h", "i", "j", "k", "l", "m", "n", "o", "p", "q", "r", "s", "t", "u", "v", "w", "x", "y", "z"],
+
+    horizontalWindow: function() {
+      window.addEventListener('orientationchange', function (evt) {
+      switch(window.orientation) {
+          case 0: // portrait
+          case 180: // portrait
+          case 90: // landscape
+          case -90: // landscape
+      }
+      }, false);
+    },
+
     chooseCreatures: function() {
         var arrNumb = [];
         while (arrNumb.length < this.numCreatures) {

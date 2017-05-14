@@ -1,9 +1,20 @@
 var contnroller = {
     numClick: 0,
     displayStartButton: function() {
-        var button = document.getElementById("start");
-        button.addEventListener("click", function() {
-            button.style.display = "none";
+        var buttonGo = document.getElementById("start"),
+            getButton = buttonGo.getSVGDocument(),
+            shadowButton = getButton.getElementById("ellipseClick");
+
+            getButton.addEventListener("mouseover", function() {
+                view.buttonHover(shadowButton);
+            }, false);
+
+            getButton.addEventListener("mouseout", function() {
+                view.buttonHoverOff(shadowButton);
+            }, false);
+
+            getButton.addEventListener("click", function() {
+            view.buttonClick();
             model.coordinatePlacesHidden();
             contnroller.parseClick();
         }, false)
