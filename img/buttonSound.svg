@@ -1,0 +1,16 @@
+<svg id="buttonSound" cursor="pointer" height="16.664991mm" viewBox="0 0 16.749813 16.664991" width="16.749813mm" xmlns="http://www.w3.org/2000/svg">
+  <g id="layer1" transform="translate(-19.478148 -90.333019)"><rect id="rectButton" fill="#fff" fill-opacity=".4" fill-rule="evenodd" height="14.249889" rx=".93544334" width="14.249889" x="21.196611" y="91.107178"/>
+    <g id="g4393" transform="translate(2.0045215 19.470017)">
+      <g id="g4385" stroke-width=".81359822" transform="matrix(1.229108 0 0 1.229108 -6.2965984 -18.456316)"><path
+        id="path4332"
+        d="m27.415089 82.356769c-2.673345-1.641834-3.437223-2.285159-5.114491-2.716704-.288983-.07435-.281745-1.043409.0097-1.142342 1.43369-.486689 1.887969-.688479 5.152048-2.661042.702771 3.342462.715392 4.130569-.04726 6.520088z"
+        fill="#fff"
+        fill-rule="evenodd"/><ellipse id="path4330" cx="27.418072" cy="79.088898" fill="#dfdfe3" fill-rule="evenodd" rx="1.0857824" ry="3.2239387"/></g>
+      <g fill="none" stroke="#000" stroke-linecap="round" stroke-linejoin="round"><path id="path4344" d="m-61.439437 55.056384a1.8667105 1.5869129 0 0 1 -2.386349.852584" stroke-opacity=".54901961" stroke-width=".40000001" transform="rotate(-67.664233)"/><path id="path4344-4" d="m-54.191746 50.888543a2.5192959 1.6933602 0 0 1 -3.220596.909775" stroke-opacity=".62745098" stroke-width=".40568817" transform="matrix(.28159172 -.95953432 .86682738 .49860836 0 0)"/><path
+        id="path4344-8"
+        d="m-46.670322 50.325541a3.3263626 1.8555367 0 0 1 -1.902375 1.259915 3.3263626 1.8555367 0 0 1 -2.949471-.08076"
+        stroke-opacity=".70558376"
+        stroke-width=".42085925"
+        transform="matrix(.21326984 -.97699333 .79106544 .61173154 0 0)"/></g>
+    </g><path id="soundOff" d="m35.446503 91.107178c-9.983762 10.077892-7.30458 7.418131-15.201205 15.102492" style="opacity:0;fill:none;stroke:#761111;stroke-width:2.20000005;stroke-linejoin:round;stroke-opacity:.70558376"/></g>
+</svg>

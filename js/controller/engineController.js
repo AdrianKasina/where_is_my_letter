@@ -3,7 +3,8 @@ var contnroller = {
     displayStartButton: function() {
         var buttonGo = document.getElementById("start"),
             getButton = buttonGo.getSVGDocument(),
-            shadowButton = getButton.getElementById("ellipseClick");
+            shadowButton = getButton.getElementById("ellipseClick"),
+            goSound = document.getElementById("soundGo");
 
             getButton.addEventListener("mouseover", function() {
                 view.buttonHover(shadowButton);
@@ -14,24 +15,46 @@ var contnroller = {
             }, false);
 
             getButton.addEventListener("click", function() {
-            view.buttonClick();
+            view.buttonStartClick(goSound);
             model.coordinatePlacesHidden();
             contnroller.parseClick();
-        }, false)
+        }, false);
+    },
+
+    backgroundMusic:function() {
+      var buttonSoundBg = document.getElementById("soundButton"),
+          getSoundButton = buttonSoundBg.getSVGDocument(),
+          backgroundColor = getSoundButton.getElementById("rectButton");
+          crossedSound = getSoundButton.getElementById("soundOff");
+          getSoundButton.addEventListener("mouseover", function() {
+            view.buttonSoundHover(backgroundColor);
+          },false);
+
+          getSoundButton.addEventListener("mouseout", function() {
+            view.buttonSoundHoverOff(backgroundColor);
+          },false);
+
+          getSoundButton.addEventListener("click", function() {
+            view.buttonSoundClick(crossedSound);
+          },false);
+
     },
     parseClick: function() {
-        var characters = document.querySelectorAll('.no-clicked'),
+        var characters = document.getElementsByClassName("no-clicked"),
             noRepeat = new Set(),
             arrPair = [],
+            arrCharacterLenght = characters.length,
+            clickSound = document.getElementById("soundClick"),
             j = 0;
-        if (characters.length === 0) {
+        if (arrCharacterLenght === 0) {
             setTimeout(view.congratulations, 2100);
-        };
-        for (let i = 0; i < characters.length; i++) {
+        } else {
+        for (let i = 0; i < arrCharacterLenght; i++) {
             characters[i].addEventListener("click", function() {
                 var clickedCharacter = characters[i];
                 clickedCharacter.classList.contains("clicked") ? true : (clickedCharacter.className += " clicked", j++);
                 view.showUp(clickedCharacter);
+                view.soundClick(clickSound);
                 noRepeat.add(clickedCharacter);
                 var arrPair = Array.from(noRepeat);
                 if (j === 2) {
@@ -40,6 +63,7 @@ var contnroller = {
                     noRepeat.clear();
                 };
             }, false)
+        }
         }
     },
     guessPair: function(pair) {
@@ -63,5 +87,7 @@ var contnroller = {
 window.addEventListener("load", function(event) {
     model.chooseCreatures();
     model.chooseLetters();
+    contnroller.backgroundMusic();
+    view.showMyLetter();
     contnroller.displayStartButton();
 }, false);
