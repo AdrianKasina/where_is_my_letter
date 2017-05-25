@@ -1,0 +1,9 @@
+<svg id="exitButton" cursor="pointer" height="16.664991mm" viewBox="0 0 16.749813 16.664991" width="16.749813mm" xmlns:xlink="http://www.w3.org/1999/xlink" xmlns="http://www.w3.org/2000/svg">
+<a xlink:href="../index.html" target="_top">
+  <g id="bgButtonExit" fill="#fff" transform="translate(-19.478148 -90.333019)">
+    <rect id="bg" fill="#fff" fill-opacity=".4" fill-rule="evenodd" height="14.249889" rx=".93544334" width="14.249889" x="21.196611" y="91.107178"/>
+  <path id="path7694" d="m22.315626 97.977664 3.5-4.911078v2.839739h8.739541v2.071339z" />
+  <path id="path7694-7" d="m22.315626 98.395273 3.5 4.911077v-2.83974h8.739541v-2.071337z" />
+</g>
+</a>
+</svg>

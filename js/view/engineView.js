@@ -52,15 +52,19 @@ var view = {
                     scale: 0.8,
                     delay: 0.5 });
                 tl.to(characters[i], 1.2, {
-                    left: (coordinates[i][0] - (widthCharacter / 4))
+                    left: (coordinates[i][0] - (widthCharacter / 8))
             });
         }
 
     },
 
     showUp: function(character) {
+      var positionCharacter = character.getBoundingClientRect(),
+          soundClickLetter = character.getElementsByClassName("soundLetter");
+          soundClickLetter[0].play();
+          soundClickLetter[0].volume = 1;
         TweenMax.to(character, 1, {
-            x: -155 + "px",
+            x: -positionCharacter.width,
             ease: Back.easeOut.config(1)
         })
     },
@@ -81,7 +85,7 @@ var view = {
       start.style.visibility = "visible";
     },
 
-    buttonStartClick: function(goSound) {      
+    buttonStartClick: function(goSound) {
       start.style.display = "none";
       goSound.play();
     },
@@ -94,22 +98,21 @@ var view = {
       backgroundColor.setAttribute("style", "fill=#fff; fill-opacity=.4;");
     },
 
-    buttonSoundClick: function(crossedSound) {
-      var backgroundMusic = document.getElementById("backgroundSound");
-        if (backgroundMusic.paused) {
+    buttonSoundOn: function(backgroundMusic, crossedSound) {
           backgroundMusic.play();
           crossedSound.setAttribute("style", "opacity:0");
-        } else {
+        },
+
+  buttonSoundOff: function(backgroundMusic, crossedSound) {
           backgroundMusic.pause();
           crossedSound.setAttribute("style", "opacity:1;fill:none;stroke:#761111;stroke-width:2;stroke-linejoin:round;stroke-opacity:.7");
-        }
-    },
+       },
 
 
     backHide: function(arrcharacter) {
       for (let i=0; i<arrcharacter.length; i++) {
       TweenMax.to(arrcharacter[i], 1, {
-          x: 0 + "px",
+          x: 0,
           ease: Back.easeOut.config(1), delay:1
       })
     }

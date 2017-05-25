@@ -20,13 +20,24 @@ var contnroller = {
             contnroller.parseClick();
         }, false);
     },
+    exitButton: function() {
+      var buttonExitBg =document.getElementById("exitButton"),
+          getExitButton = buttonExitBg.getSVGDocument(),
+          backgroundColor = getExitButton.getElementById("bg");
+          getExitButton.addEventListener("mouseover", function() {
+            view.buttonSoundHover(backgroundColor);
+          },false);
+          getExitButton.addEventListener("mouseout", function() {
+            view.buttonSoundHoverOff(backgroundColor);
+          },false);
 
+    },
     backgroundMusic:function() {
       var buttonSoundBg = document.getElementById("soundButton"),
           getSoundButton = buttonSoundBg.getSVGDocument(),
-          backgroundColor = getSoundButton.getElementById("rectButton");
+          backgroundColor = getSoundButton.getElementById("rectButton"),
           crossedSound = getSoundButton.getElementById("soundOff");
-          getSoundButton.addEventListener("mouseover", function() {
+           getSoundButton.addEventListener("mouseover", function() {
             view.buttonSoundHover(backgroundColor);
           },false);
 
@@ -35,9 +46,15 @@ var contnroller = {
           },false);
 
           getSoundButton.addEventListener("click", function() {
-            view.buttonSoundClick(crossedSound);
+            var backgroundMusic = document.getElementById("backgroundSound");
+            if (document.cookie === "sound=off") {
+               document.cookie = "sound=on";
+               view.buttonSoundOn(backgroundMusic, crossedSound);
+             }else{
+                document.cookie = "sound=off";
+                view.buttonSoundOff(backgroundMusic, crossedSound);
+              }
           },false);
-
     },
     parseClick: function() {
         var characters = document.getElementsByClassName("no-clicked"),
@@ -67,8 +84,8 @@ var contnroller = {
         }
     },
     guessPair: function(pair) {
-        var firstLetter = pair[0].getElementsByTagName("p")[0].innerHTML;
-        var secondLetter = pair[1].getElementsByTagName("p")[0].innerHTML;
+        var firstLetter = pair[0].getElementsByTagName("p")[0].innerHTML,
+            secondLetter = pair[1].getElementsByTagName("p")[0].innerHTML;
         if (firstLetter === secondLetter) {
             pair[0].classList.remove("no-clicked");
             pair[1].classList.remove("no-clicked");
@@ -79,14 +96,15 @@ var contnroller = {
             pair[0].classList.remove("clicked");
             pair[1].classList.remove("clicked");
             view.backHide(pair);
-            view.miss();
             pair.length = 0;
+            view.miss();
         };
     },
 }
 window.addEventListener("load", function(event) {
     model.chooseCreatures();
     model.chooseLetters();
+    contnroller.exitButton();
     contnroller.backgroundMusic();
     view.showMyLetter();
     contnroller.displayStartButton();

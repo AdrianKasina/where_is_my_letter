@@ -1,0 +1,1 @@
+@import url(normalize.css);body{position:relative;background:url("../img/menubackground.jpg") no-repeat center center fixed;background-size:100vw 100vh;width:100vw;height:100vh;overflow:hidden}.mainMenu{position:absolute;top:50%;left:50%;transform:translate(-50%, -50%);width:35vw;height:auto}.soundButton{position:absolute;top:5vh;left:5vh;width:4vw;height:4vw}
