@@ -1,0 +1,12 @@
+$characters: 6;
+$position: (80vw/$characters);
+@for $i from 1 through $characters {
+     div.monsters div:nth-child(#{$i}) {
+        @if $i%2 == 0 {
+            left: ($position*$i)-($position/4);
+        }
+        @else {
+            left: ($position*$i)+($position/4);
+        }
+    }
+}

@@ -1,7 +1,8 @@
 var controller = {
   mainMenu: function() {
-    var Menu = document.getElementById("mainMenu"),
-      getMenuButton = Menu.getSVGDocument(),
+    var clickSound = document.getElementById("soundClick"),
+      menu = document.getElementById("mainMenu"),
+      getMenuButton = menu.getSVGDocument(),
       backgroundColor = getMenuButton.querySelectorAll(".shadowButtonMenu"),
       buttonsMenu = getMenuButton.querySelectorAll(".buttonMenu");
     for (let i = 0; i < backgroundColor.length; i++) {
@@ -10,13 +11,13 @@ var controller = {
       buttonMenu.addEventListener("mouseover", function() {
         var clickBgColor = backgroundColor[i];
         view.buttonMenuHover(clickBgColor);
+        view.soundClick(clickSound);
       }, false);})(i);
       (function (i) {
       buttonMenu.addEventListener("mouseout", function() {
         var clickBgColor = backgroundColor[i];
         view.buttonMenuHoverOff(clickBgColor);
       }, false);})(i);
-      
     }
 
     // getSoundButton.addEventListener("click", function() {

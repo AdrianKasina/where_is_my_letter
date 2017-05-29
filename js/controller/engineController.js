@@ -58,28 +58,29 @@ var contnroller = {
     },
     parseClick: function() {
         var characters = document.getElementsByClassName("no-clicked"),
-            noRepeat = new Set(),
-            arrPair = [],
+            arrPair = new Array(0),
             arrCharacterLenght = characters.length,
             clickSound = document.getElementById("soundClick"),
             j = 0;
         if (arrCharacterLenght === 0) {
             setTimeout(view.congratulations, 2100);
         } else {
-        for (let i = 0; i < arrCharacterLenght; i++) {
+        for (var i = 0; i < arrCharacterLenght; i++) {
+          (function(i) {
             characters[i].addEventListener("click", function() {
                 var clickedCharacter = characters[i];
-                clickedCharacter.classList.contains("clicked") ? true : (clickedCharacter.className += " clicked", j++);
+                clickedCharacter.classList.add("clicked");
+                j++;
                 view.showUp(clickedCharacter);
                 view.soundClick(clickSound);
-                noRepeat.add(clickedCharacter);
-                var arrPair = Array.from(noRepeat);
+                arrPair.push(clickedCharacter);
                 if (j === 2) {
                     contnroller.guessPair(arrPair);
                     j = 0;
-                    noRepeat.clear();
+                    arrPair.length = 0;
                 };
             }, false)
+          })(i);
         }
         }
     },
@@ -89,14 +90,12 @@ var contnroller = {
         if (firstLetter === secondLetter) {
             pair[0].classList.remove("no-clicked");
             pair[1].classList.remove("no-clicked");
-            pair.length = 0;
             view.hit();
             contnroller.parseClick();
         } else {
             pair[0].classList.remove("clicked");
             pair[1].classList.remove("clicked");
             view.backHide(pair);
-            pair.length = 0;
             view.miss();
         };
     },

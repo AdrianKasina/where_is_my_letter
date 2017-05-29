@@ -132,12 +132,12 @@ var view = {
       successSound.play();
     },
 
-    congratulations: function() {
+    congratulations: function(newLevel) {
         var winText = document.getElementById("win"),
             winSound = document.getElementById("soundWin");
         winText.style.display = "block";
         setTimeout(function () { winText.style.display = "none";}, 4000);
-        setTimeout(window.location.reload.bind(window.location), 5000);
+       setTimeout(window.location.replace(newLevel2()), 5000);
         winSound.play();
     }
 }

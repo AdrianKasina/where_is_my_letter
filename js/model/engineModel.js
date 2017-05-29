@@ -2,12 +2,13 @@ var model = {
     numCreatures: 4,
     numPictures: 8,
     locations: 6,
+    numletters: 26,
     alphabet: ["a", "b", "c", "d", "e", "f", "g", "h", "i", "j", "k", "l", "m", "n", "o", "p", "q", "r", "s", "t", "u", "v", "w", "x", "y", "z"],
 
     horizontalWindow: function() {
       window.addEventListener('orientationchange', function (evt) {
       switch(window.orientation) {
-          case 90: // landscape    
+          case 90: // landscape
       }
       }, false);
     },
@@ -25,7 +26,7 @@ var model = {
     chooseLetters: function() {
         var arrLetters = [];
         while (arrLetters.length < this.numCreatures / 2) {
-            var randomLetter = Math.floor(Math.random() * 26)
+            var randomLetter = Math.floor(Math.random() * this.numletters)
             var letter = this.alphabet[randomLetter];
             if (arrLetters.indexOf(letter) > -1) continue;
             arrLetters[arrLetters.length] = letter;

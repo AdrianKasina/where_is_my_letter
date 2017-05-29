@@ -1,1 +1,114 @@
-// level2
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8">
+  <title>Game JavaScript</title>
+  <meta name="description" content="Game for kids, who learning english">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="css/game.min.css">
+  <link rel="stylesheet" href="css/level2.min.css"
+
+</head>
+
+<body>
+  <object role="button" class="soundButton" id="soundButton" type="image/svg+xml" data="img/buttonSound.svg"></object>
+  <object role="button" class="exitButton" id="exitButton" type="image/svg+xml" data="img/buttonExit.svg"></object>
+  <object class="sun" id="sun" type="image/svg+xml" data="img/sun.svg"></object>
+  <object class="cloud1" id="cloud1" type="image/svg+xml" data="img/cloud1.svg"></object>
+  <object class="cloud2" id="cloud2" type="image/svg+xml" data="img/cloud2.svg"></object>
+  <object class="cloud3" id="cloud3" type="image/svg+xml" data="img/cloud3.svg"></object>
+  <object class="mouse" id="mouse" type="image/svg+xml" data="img/mouse.svg"></object>
+
+  <object role="button" id="start" class="start" type="image/svg+xml" data="img/buttonGo.svg"></object>
+  <audio id="soundGo" src="sound/go.mp3"></audio>
+
+
+  <!-- Charakters with letters -->
+  <div class="monsters">
+    <div class="picture no-clicked">
+      <div class="speakBubbels">
+        <p class="capital letter"></p>
+        <audio class="soundLetter" id="soundFirstLetter" src="">
+        </audio>
+      </div>
+      <object class="character" id="character1" type="image/svg+xml" data=""></object>
+    </div>
+    <div class="picture no-clicked">
+      <div class="speakBubbels">
+        <p class="letter"></p>
+        <audio class="soundLetter" id="soundSecondLetter" src="">
+        </audio>
+      </div>
+      <object class="character" id="character2" type="image/svg+xml" data=""></object>
+    </div>
+    <div class="picture no-clicked">
+      <div class="speakBubbels">
+        <p class="capital letter"></p>
+        <audio class="soundLetter" id="soundThirdLetter" src="">
+        </audio>
+      </div>
+      <object class="character" id="character3" type="image/svg+xml" data=""></object>
+    </div>
+    <div class="picture no-clicked">
+      <div class="speakBubbels">
+        <p class="letter"></p>
+        <audio class="soundLetter" id="soundFourthLetter" src="">
+        </audio>
+      </div>
+      <object class="character" id="character4" type="image/svg+xml" data=""></object>
+    </div>
+    <div class="picture no-clicked">
+      <div class="speakBubbels">
+        <p class="capital letter"></p>
+        <audio class="soundLetter" id="soundFourthLetter" src="">
+        </audio>
+      </div>
+      <object class="character" id="character5" type="image/svg+xml" data=""></object>
+    </div>
+    <div class="picture no-clicked">
+      <div class="speakBubbels">
+        <p class="letter"></p>
+        <audio class="soundLetter" id="soundFourthLetter" src="">
+        </audio>
+      </div>
+      <object class="character" id="character6" type="image/svg+xml" data=""></object>
+    </div>
+  </div>
+  <audio id="soundClick" src="sound/click.mp3"></audio>
+  <!-- places for hides -->
+  <!-- <div class="success"><h2>Brawo!</h2></div> -->
+  <div>
+    <img class="places" src="img/conifer.svg" />
+    <img class="places" src="img/corn.svg" />
+    <img class="places" src="img/bush-raspberry.svg" />
+    <img class="places" src="img/rock.svg" />
+    <img class="places" src="img/hay.svg" />
+    <img class="places" src="img/sunflowers.svg" />
+
+  </div>
+  <img class="miss" id="miss" src="img/ooops.svg" />
+  <audio class="soundLetter" id="soundMiss" src="sound/aww.mp3"></audio>
+  <img class="success" id="success" src="img/well.svg" />
+  <audio class="soundLetter" id="soundSuccess" src="sound/yay.mp3"></audio>
+  <img class="win" id="win" src="img/next.svg" />
+  <audio class="soundLetter" id="soundWin" src="sound/clapping.mp3"></audio>
+
+  <audio id="backgroundSound" autoplay loop>
+  <source src="sound/background1.mp3"/></audio>
+
+  <script src="js/TweenMax.min.js"></script>
+  <script src="js/kute/kute.min.js"></script>
+  <script src="js/kute/kute-svg.min.js"></script>
+  <script src="js/kute/kute-attr.min.js"></script>
+
+
+  <script src="js/model/engineModel.js"></script>
+  <script src="js/model/attributesModelLevel2.js"></script>
+  <script src="js/view/engineView.js"></script>
+  <script src="js/controller/engineController.js"></script>
+
+
+
+  <script src="js/view/motionView.js"></script>
+</body>
