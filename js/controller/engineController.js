@@ -57,18 +57,13 @@ var contnroller = {
           },false);
     },
     parseClick: function() {
-        var characters = document.getElementsByClassName("no-clicked"),
+        var characters = document.querySelectorAll(".no-clicked"),
             arrPair = new Array(0),
-            arrCharacterLenght = characters.length,
             clickSound = document.getElementById("soundClick"),
             j = 0;
-        if (arrCharacterLenght === 0) {
-            setTimeout(view.congratulations, 2100);
-        } else {
-        for (var i = 0; i < arrCharacterLenght; i++) {
-          (function(i) {
-            characters[i].addEventListener("click", function() {
-                var clickedCharacter = characters[i];
+            document.getElementById("monsters").addEventListener("click", function(e) {
+              if (e.target && e.target.matches(".no-clicked")) {
+                var clickedCharacter = e.target;
                 clickedCharacter.classList.add("clicked");
                 j++;
                 view.showUp(clickedCharacter);
@@ -78,26 +73,28 @@ var contnroller = {
                     contnroller.guessPair(arrPair);
                     j = 0;
                     arrPair.length = 0;
-                };
-            }, false)
-          })(i);
-        }
-        }
-    },
+                    }
+                  }
+                }, false)
+  },
     guessPair: function(pair) {
         var firstLetter = pair[0].getElementsByTagName("p")[0].innerHTML,
             secondLetter = pair[1].getElementsByTagName("p")[0].innerHTML;
+            console.log("1 litera="+firstLetter+" 2 litera="+secondLetter);
         if (firstLetter === secondLetter) {
             pair[0].classList.remove("no-clicked");
             pair[1].classList.remove("no-clicked");
             view.hit();
-            contnroller.parseClick();
+            let characters = document.querySelectorAll(".no-clicked");
+            if (characters.length === 0) {
+                setTimeout(view.congratulations, 2100);
+           };
         } else {
             pair[0].classList.remove("clicked");
             pair[1].classList.remove("clicked");
             view.backHide(pair);
             view.miss();
-        };
+        }
     },
 }
 window.addEventListener("load", function(event) {

@@ -1,4 +1,4 @@
 model.numCreatures = 6;
-function newLevel2(){
+function nextLevel(){
   return "level3.html";
-};
+}

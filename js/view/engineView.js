@@ -32,7 +32,7 @@ var view = {
           arrSpeakBubbelsLength = arrSpeakBubbels.length,
           tl = new TimelineMax({onComplete:view.showButtonStart});
           for (let i=0; i < arrSpeakBubbelsLength; i++) {
-            tl.to(arrSpeakBubbels[i], .8, {opacity:1, delay:1, scale:1, ease:Elastic.easeOut.config(1, 0.3), function() {arrPlayLetter[i].play()}});
+            tl.to(arrSpeakBubbels[i], .8, {opacity:1, delay:.1, scale:1, ease:Elastic.easeOut.config(1, 0.3), function() {arrPlayLetter[i].play()}});
             }
         },
 
@@ -137,7 +137,7 @@ var view = {
             winSound = document.getElementById("soundWin");
         winText.style.display = "block";
         setTimeout(function () { winText.style.display = "none";}, 4000);
-       setTimeout(window.location.replace(newLevel2()), 5000);
+       setTimeout(window.location.replace(nextLevel()), 5000);
         winSound.play();
     }
 }

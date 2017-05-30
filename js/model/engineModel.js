@@ -39,24 +39,31 @@ var model = {
         var getCoordinate = document.querySelectorAll(".places"),
             getCoordinateBody = document.body.getBoundingClientRect(),
             arrCoordinates = [];
-        for (let i = 0; i < getCoordinate.length; i++) {
+       //return function (arrCoordinates) {
+            for (let i = 0; i < getCoordinate.length; i++) {
             var coordinates = getCoordinate[i].getBoundingClientRect(),
                 heightPlaces = getCoordinate[i].clientHeight;
-            arrCoordinates[arrCoordinates.length] = [coordinates.left, coordinates.top + heightPlaces];
-        }
+                arrCoordinates[arrCoordinates.length] = [coordinates.left, coordinates.top + heightPlaces];
+      //  }
+      //  return arrCoordinates;
+      }
         model.choosePlacesHidden(arrCoordinates);
     },
 
     choosePlacesHidden: function(arrCoordinates) {
-        var arrPlaces = [];
-        var mySet = new Set();
-        var i = 0;
+        var arrPlaces = [],
+            mySet = new Set(),
+            i = 0;
+      // return function (arrPlaces) {
         while (arrPlaces.length < this.numCreatures) {
             var randomNumber = Math.floor(Math.random() * this.locations);
             var randomPlaces = arrCoordinates[randomNumber];
             mySet.add(randomPlaces);
             var arrPlaces = Array.from(mySet);
         }
+    //    return arrPlaces;
+    //    console.log(arrPlaces);
+  //    }
         view.runHidding(arrPlaces);
       }
     }
