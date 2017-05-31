@@ -80,7 +80,6 @@ var contnroller = {
     guessPair: function(pair) {
         var firstLetter = pair[0].getElementsByTagName("p")[0].innerHTML,
             secondLetter = pair[1].getElementsByTagName("p")[0].innerHTML;
-            console.log("1 litera="+firstLetter+" 2 litera="+secondLetter);
         if (firstLetter === secondLetter) {
             pair[0].classList.remove("no-clicked");
             pair[1].classList.remove("no-clicked");

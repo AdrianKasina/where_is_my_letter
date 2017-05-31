@@ -140,7 +140,6 @@ p {
   width: auto;
   height: 20vh;
   margin: auto;
-  cursor: pointer;
 }
 .picture:before {
 content: "";
@@ -156,6 +155,7 @@ left: -1vw;
 }
 .clicked {
   pointer-events: none;
+  z-index: 2;
 }
 .no-clicked {
 }
@@ -180,6 +180,8 @@ $position: (80vw/$characters);
 }
 .character {
   height: 15vh;
+  cursor: pointer;
+
 }
 .capital {
     text-transform: capitalize;

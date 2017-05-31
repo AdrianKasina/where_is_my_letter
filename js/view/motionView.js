@@ -5,7 +5,7 @@ document.getElementById("sun").addEventListener("load", function() {
   var sunRayEnd = sun.getElementById("sunRay2");
   var pulseSunRay = KUTE.to(sunRayStart, {
     attr: {
-      'fill-opacity': "0.5"
+      fillOpacity: "0.5"
     }
   }, {
     yoyo: true,
