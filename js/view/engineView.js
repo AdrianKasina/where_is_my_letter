@@ -8,7 +8,7 @@ var view = {
         }
     },
     myLetters: function(showLetter) {
-        var pairLetters = document.querySelectorAll('.letter'),
+        var pairLetters = document.querySelectorAll(".letter"),
             arrPairLetters = pairLetters.length,
             arrSoundLetter= document.querySelectorAll(".soundLetter"),
             j = 0;
@@ -37,7 +37,7 @@ var view = {
         },
 
     runHidding: function(coordinates) {
-        var characters = document.querySelectorAll('.picture'),
+        var characters = document.querySelectorAll(".picture"),
             arrCharacterLenght = characters.length;
         for (let i = 0; i < arrCharacterLenght; i++) {
             var heightCharacters = characters[i].clientHeight,

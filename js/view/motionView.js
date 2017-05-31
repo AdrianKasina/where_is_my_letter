@@ -26,7 +26,7 @@ document.getElementById("sun").addEventListener("load", function() {
   //   { path: sunRayStart}, // from shape
   //   { path: sunRayEnd }, // to shape
   //   { // options
-  //  easing: 'easingCubicInOut',
+  //  easing: "easingCubicInOut",
   //  yoyo: true, repeat: Infinity, duration: 7000,
   //  morphPrecision: 5,
   //  reverseFirstPath: true,
@@ -44,7 +44,7 @@ function getRandomInt(min, max) {
 document.getElementById("cloud1").addEventListener("load", function() {
   var cloud1 = document.getElementById("cloud1");
   TweenMax.to(cloud1, getRandomInt(18, 35), {
-    left: '110vw',
+    left: "110vw",
     repeat: Infinity,
     ease: Quad.easeInOut
   });
@@ -56,19 +56,19 @@ document.getElementById("cloud2").addEventListener("load", function() {
     ease: Circ.easeInOut
   });
   tl.to(cloud1, getRandomInt(4, 10), {
-    left: '70vw'
+    left: "70vw"
   });
   tl.to(cloud1, getRandomInt(4, 10), {
-    left: '50vw'
+    left: "50vw"
   });
   tl.to(cloud1, getRandomInt(4, 10), {
-    top: '5vh'
+    top: "5vh"
   });
   tl.to(cloud1, getRandomInt(4, 10), {
-    top: '1vh'
+    top: "1vh"
   });
   tl.to(cloud1, getRandomInt(4, 10), {
-    left: '110vw'
+    left: "110vw"
   });
 });
 document.getElementById("cloud3").addEventListener("load", function() {
@@ -78,12 +78,12 @@ document.getElementById("cloud3").addEventListener("load", function() {
     ease: Power2.easeInOut
   });
   tl.to(cloud1, getRandomInt(5, 15), {
-    left: '40vw',
-    top: '10vh'
+    left: "40vw",
+    top: "10vh"
   });
   tl.to(cloud1, getRandomInt(5, 15), {
-    left: '110vw',
-    top: '6vh'
+    left: "110vw",
+    top: "6vh"
   });
 });
 
@@ -136,15 +136,15 @@ document.getElementById("mouse").addEventListener("load", function() {
     y = mouseReverse(start, x1);
     h = getRandomPositionY();
     tl.to(mouse, .1, {
-      left: start + 'vw',
-      bottom: '-5vh'
+      left: start + "vw",
+      bottom: "-5vh"
     });
     tl.to(mouse, .5, {
       rotationY: y
     });
     tl.to(mouse, 5, {
-      left: x1 + 'vw',
-      bottom: h + 'vh',
+      left: x1 + "vw",
+      bottom: h + "vh",
       scale: zoom(h)
     });
     y = mouseReverse(x1, x2);
@@ -153,8 +153,8 @@ document.getElementById("mouse").addEventListener("load", function() {
       rotationY: y
     })
     tl.to(mouse, 5, {
-      left: x2 + 'vw',
-      bottom: h + 'vh',
+      left: x2 + "vw",
+      bottom: h + "vh",
       scale: zoom(h)
     });
     x1 = x2;
@@ -165,8 +165,8 @@ document.getElementById("mouse").addEventListener("load", function() {
       rotationY: y
     });
     tl.to(mouse, 5, {
-      left: x2 + 'vw',
-      bottom: h + 'vh',
+      left: x2 + "vw",
+      bottom: h + "vh",
       scale: zoom(h)
     });
     x1 = x2;
@@ -176,8 +176,8 @@ document.getElementById("mouse").addEventListener("load", function() {
       rotationY: y
     });
     tl.to(mouse, 5, {
-      left: x2 + 'vw',
-      bottom: '-5vh',
+      left: x2 + "vw",
+      bottom: "-5vh",
       scale: 1
     });
   }

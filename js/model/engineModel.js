@@ -6,7 +6,7 @@ var model = {
     alphabet: ["a", "b", "c", "d", "e", "f", "g", "h", "i", "j", "k", "l", "m", "n", "o", "p", "q", "r", "s", "t", "u", "v", "w", "x", "y", "z"],
 
     horizontalWindow: function() {
-      window.addEventListener('orientationchange', function (evt) {
+      window.addEventListener("orientationchange", function (evt) {
       switch(window.orientation) {
           case 90: // landscape
       }
