@@ -13,8 +13,10 @@ var view = {
             arrSoundLetter= document.querySelectorAll(".soundLetter"),
             j = 0;
         var addLetter = function (i,j) {
-          pairLetters[i].innerHTML = showLetter[j];
-          arrSoundLetter[i].src = "sound/alphabet/"+showLetter[j]+".mp3";
+          var letters = pairLetters[i],
+              soundLetter = arrSoundLetter[i];
+          letters.innerHTML = showLetter[j];
+          soundLetter.src = "sound/alphabet/"+showLetter[j]+".mp3";
         }
         for (let i = 0; i < arrPairLetters; i++) {
             if (i % 2 === 0) {
@@ -42,17 +44,20 @@ var view = {
         for (let i = 0; i < arrCharacterLenght; i++) {
             var heightCharacters = characters[i].clientHeight,
                 widthCharacter = characters[i].clientWidth,
-                randomMiddlePosition = getRandomInt(48, 52);
+                randomMiddlePosition = getRandomInt(48, 52),
+                character = characters[i],
+                coordinate1=coordinates[i][1],
+                coordinate2=coordinates[i][0];
             var tl = new TimelineMax({
                     ease: Back.easeOut.config(1)
                 });
-                tl.to(characters[i], 1, {
+                tl.to(character, 1, {
                     left: randomMiddlePosition+"vw",
-                    top: (coordinates[i][1]) - heightCharacters-10,
+                    top: (coordinate1) - heightCharacters-10,
                     scale: 0.8,
                     delay: 0.5 });
-                tl.to(characters[i], 1.2, {
-                    left: (coordinates[i][0] - (widthCharacter / 8))
+                tl.to(character, 1.2, {
+                    left: (coordinate2 - (widthCharacter / 8))
             });
         }
 

@@ -39,13 +39,13 @@ var model = {
         var getCoordinate = document.querySelectorAll(".places"),
             getCoordinateBody = document.body.getBoundingClientRect(),
             arrCoordinates = [];
-       //return function (arrCoordinates) {
+
             for (let i = 0; i < getCoordinate.length; i++) {
-            var coordinates = getCoordinate[i].getBoundingClientRect(),
-                heightPlaces = getCoordinate[i].clientHeight;
+            var coordinate = getCoordinate[i],
+                coordinates = coordinate.getBoundingClientRect(),
+                heightPlaces = coordinate.clientHeight;
                 arrCoordinates[arrCoordinates.length] = [coordinates.left, coordinates.top + heightPlaces];
-      //  }
-      //  return arrCoordinates;
+
       }
         model.choosePlacesHidden(arrCoordinates);
     },
