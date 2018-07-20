@@ -6,3 +6,4 @@ https://guydiamond.github.io/where_is_my_letter/
 
 ![alt text](https://raw.githubusercontent.com/GuyDiamond/where_is_my_letter/master/img/pic-readme.jpg)
 
+*The game works properly under Chrome
